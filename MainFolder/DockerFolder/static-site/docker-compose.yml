@@ -1,0 +1,10 @@
+version: '3.7'
+  
+services:
+  
+  
+  wweb:
+    build: .
+    container_name: prog_web
+    ports:
+      - "8080:80"
