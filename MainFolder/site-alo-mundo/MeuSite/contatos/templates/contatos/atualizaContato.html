@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Contato</title>
+    <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+    {% include 'contatos/header.html' %}
+</head>
+<body>
+    {% include 'contatos/links.html' %}
+    <h1>Atualiza Contato</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table class="formulario">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</body>
+</html>
