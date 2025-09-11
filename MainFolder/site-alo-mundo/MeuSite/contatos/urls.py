@@ -1,9 +1,11 @@
 from django.urls import path
-from contatos.views import ContatoListView, ContatoCreateView
+from contatos import views
 
 app_name = "contatos"
 
 urlpatterns = [
-    path("lista/", ContatoListView.as_view(), name="lista-contatos"),   
-    path("cria/", ContatoCreateView.as_view(), name="cria-contato"),
-    ]
+    path("lista/", views.ContatoListView.as_view(), name="lista-contatos"),   
+    path("cria/", views.ContatoCreateView.as_view(), name="cria-contato"),
+    path("atualiza/<int:pk>/", views.ContatoUpdateView.as_view(), name="atualiza"),
+    path("deleta/<int:pk>/", views.ContatoDeleteView.as_view(), name="deleta"),
+]

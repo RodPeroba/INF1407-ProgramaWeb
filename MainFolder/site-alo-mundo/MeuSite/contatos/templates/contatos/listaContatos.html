@@ -26,7 +26,8 @@
                 <td>{{ pessoa.nome }}</td>
                 <td>{{ pessoa.email }}</td>
                 <td>{{ pessoa.telefone }}</td>
-                <td> Editar / Excluir</td>
+                <td><a href="{% url 'contatos:atualiza' pk=pessoa.id %}" class="btn btn-info">Editar</a> 
+                    / Excluir</td>
             </tr>
             {% empty %}
                 <tr>
